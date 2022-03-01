@@ -51,7 +51,7 @@ session_start();
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet"> 
         <script src="https://cdn.tailwindcss.com"></script>
-    <title>SIN-UP |Benchgrowth</title>
+    <title>User Registration|Benchgrowth</title>
 </head>
 <body class="bg-cyan-500 dark:bg-gradient-to-r from-indigo-500 to-black transition-colors duration-300">
      <!-- Navbar -->
@@ -84,8 +84,8 @@ session_start();
     <section class="text-gray-600 dark:text-gray-200 body-font">
         <form class="container px-5 py-24 mx-auto flex flex-wrap items-center" method="post" action>
           <div class="lg:w-3/5 md:w-1/2 md:pr-16 lg:pr-0 pr-0">
-            <h1 class="title-font font-medium text-3xl text-gray-900 dark:text-white">Slow-carb next level shoindcgoitch ethical authentic, poko scenester</h1>
-            <p class="leading-relaxed mt-4">Poke slow-carb mixtape knausgaard, typewriter street art gentrify hammock starladder roathse. Craies vegan tousled etsy austin.</p>
+            <h1 class="title-font font-medium text-3xl text-gray-900 dark:text-white">User Reistration</h1>
+            <p class="leading-relaxed mt-4">For help or Assistance, please <a href="./contact.html">Contact Us</a>.</p>
           </div>
           <div class="lg:w-2/6 md:w-1/2 bg-gray-100 rounded-lg p-8 flex flex-col md:ml-auto w-full mt-10 md:mt-0">
             <h2 class="text-gray-900 text-lg font-medium title-font mb-5">Sign Up</h2>

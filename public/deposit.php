@@ -15,11 +15,16 @@ session_start();
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Transactions | Benchgrowth</title>
+    <title>Deposit | Benchgrowth</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet"> 
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        function sentMessage(){
+            alert("Sent: Processinng");
+        }
+    </script>
 </head>
 <body class="bg-cyan-500 dark:bg-gradient-to-r from-indigo-500 to-black transition-colors duration-300">
 
@@ -33,8 +38,8 @@ session_start();
                 <a class="mr-5" href="./plans.php">My Plans</a>      
                 <a class="mr-5" href="./invest.php">Invest</a>  
                 <a class="mr-5" href="./trans.php" >Transactions</a> 
-                <a class="mr-5" href="./withdraw.php">Withdraw</a> 
-                <a class="mr-5" href="./deposit.php">Deposit</a>   
+                <a class="mr-5" href="./withdraw.php">Withdraw</a>  
+                <a class="mr-5" href="./deposit.php">Deposit</a>  
                       
             </nav>
             <a class="flex order-first lg:order-none lg:w-1/5 text-xl font-medium items-center text-gray-900 dark:text-white lg:items-center lg:justify-center mb-4 md:mb-0" href="#">
@@ -55,12 +60,23 @@ session_start();
         </div>
         <hr>
     </header>
-    <section class="text-gray-600 dark:text-white body-font">
+    <section class="text-gray-600 body-font">
   <div class="container px-5 py-24 mx-auto">
-    <div class="lg:w-2/3 flex flex-col sm:flex-row sm:items-center items-start mx-auto">
-      <h1 class="flex-grow sm:pr-16 text-2xl font-medium title-font dark:text-white text-gray-900">No Investment Plan selected yet</h1>
-      <a href="./invest.php">
-      <button class="flex-shrink-0 text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg mt-10 sm:mt-0">Invext</button></a>
+    <div class="flex flex-col text-center w-full mb-12">
+      <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-100">Withdraw</h1>
+      
+    </div>
+    <div class="flex lg:w-2/3 w-full sm:flex-row flex-col mx-auto px-8 sm:space-x-4 sm:space-y-0 space-y-4 sm:px-0 items-end">
+      <div class="relative flex-grow w-full">
+        <label for="full-name" class="leading-7 text-sm text-gray-100">BTC Address</label>
+        <input type="text" id="full-name" name="full-name" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-transparent focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" required>
+      </div>
+      <div class="relative flex-grow w-full">
+        <label for="email" class="leading-7 text-sm text-gray-100">Amount</label>
+        <input type="email" id="email" name="email" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-transparent focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" required>
+      </div>
+      <a href="./dashboard.php">
+      <button class="text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg" onclick="sentMessage()">Withdraw</button></a>
     </div>
   </div>
 </section>

@@ -9,6 +9,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet"> 
         <script src="https://cdn.tailwindcss.com"></script>
+        <script>
+          function sentMessage(){
+              alert("Sent: Processinng");
+          }
+      </script>
 </head>
 <body class="bg-cyan-500 dark:bg-gradient-to-r from-indigo-500 to-black transition-colors duration-300">
     <header class="text-black text-1xl dark:text-white body-font ">
@@ -65,7 +70,7 @@
                 </div>
               </div>
               <div class="p-2 w-full">
-                <button id="submit" class="flex mx-auto text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">Submit</button>
+                <button id="submit" class="flex mx-auto text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg" onclick="sentMessage()">Submit</button>
               </div>
               <!-- <div class="p-2 w-full pt-8 mt-8 border-t border-gray-200 text-center">
                 <a class="text-indigo-500">example@email.com</a>
