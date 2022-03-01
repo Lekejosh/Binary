@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="user.css">
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet"> 
+<script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <div class="sidebar">
+        <div class="logo_content">
+            <div class="logo">
+                 <div class="logo_name" style="font-family: 'Dancing Script', cursive">Benchgrowth</div>
+            </div>
+            <i class='bx bx-menu' id="btn"></i>
+        </div>
+        <ul class="nav_list">
+            <li>
+                <a href="#">
+                <i class='bx bx-grid-alt' ></i>
+                <span class="links_name">Dashboard</span>
+            </a>
+            <span class="tooltip">Dashboard</span>
+            </li>
+            <li>
+                <a href="./plans.html">
+                <i class='bx bx-table' ></i>
+                <span class="links_name">My Plans</span>
+            </a>
+            <span class="tooltip">My plans</span>
+            </li>
+            <li>
+                <a href="./invest.html">
+                 <i class='bx bxs-wallet-alt'></i>
+                <span class="links_name">Invest</span>
+            </a>
+            <span class="tooltip">Invest</span>
+            </li>
+            <li>
+                <a href="#">
+                 <i class='bx bx-transfer' ></i>
+                <span class="links_name">Transactions</span>
+            </a>
+            <span class="tooltip">Transactions</span>
+            </li>
+            <li>
+                <a href="#">
+                    <i class='bx bx-credit-card' ></i>
+                <span class="links_name">Withdraw</span>
+            </a>
+            <span class="tooltip">Withdraw</span>
+            </li>
+            <li>
+                <a href="#">
+                    <i class='bx bx-user' ></i>
+                <span class="links_name">My Account</span>
+            </a>
+            <span class="tooltip">My Account</span>
+            </li>
+        </ul>
+        <div class="profile-content">
+            <div class="profile">
+                <div class="profile_details">
+                    <div class="name_job">
+                        <div class="name">
+                            <!-- <?php echo $user_data['user_name'];?> -->
+                        </div>
+                        <div class="email"></div>
+                    </div>
+                </div>
+                <a href="logout.php">
+                <i class='bx bx-log-out' id="log_out" ></i>
+            </a>
+            </div>
+        </div>
+    </div>
+    <div class="home_content">
+        <!-- <div class="text">Home</div> -->
+        <section class="text-gray-200 body-font overflow-hidden">
+            <div class="container px-5 py-24 mx-auto">
+              <div class="flex flex-col text-center w-full mb-20">
+                <h1 class="sm:text-4xl text-3xl font-medium title-font mb-2 text-gray-900 dark:text-white">Plans</h1>
+                
+              </div>
+              <div class="flex flex-wrap -m-4">
+                <div class="p-4 xl:w-1/4 md:w-1/2 w-full">
+                  <div class="h-full p-6 rounded-lg border-2 border-gray-300 flex flex-col relative overflow-hidden">
+                    <h2 class="text-sm tracking-widest title-font mb-1 font-medium">Lite investment plan</h2>
+                    <h1 class="text-5xl text-gray-100 pb-4 mb-4 border-b border-gray-200 leading-none">BRONZE</h1>
+                    <p class="flex items-center text-black dark:text-gray-300 mb-2">
+                      <span class="w-4 h-4 mr-2 inline-flex items-center justify-center bg-gray-400 text-white rounded-full flex-shrink-0">
+                        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" class="w-3 h-3" viewBox="0 0 24 24">
+                          <path d="M20 6L9 17l-5-5"></path>
+                        </svg>
+                      </span>0.0024BTC minimum
+                    </p>
+                    <p class="flex items-center text-black dark:text-gray-300 mb-2">
+                      <span class="w-4 h-4 mr-2 inline-flex items-center justify-center bg-gray-400 text-white rounded-full flex-shrink-0">
+                        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" class="w-3 h-3" viewBox="0 0 24 24">
+                          <path d="M20 6L9 17l-5-5"></path>
+                        </svg>
+                      </span>0.012BTC Maximum
+                    </p>
+                    <p class="flex items-center text-black dark:text-gray-300 mb-6">
+                      <span class="w-4 h-4 mr-2 inline-flex items-center justify-center bg-gray-400 text-white rounded-full flex-shrink-0">
+                        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" class="w-3 h-3" viewBox="0 0 24 24">
+                          <path d="M20 6L9 17l-5-5"></path>
+                        </svg>
+                      </span>Deposit Return
+                    </p>
+                    <p class="flex items-center text-black dark:text-gray-300 mb-6">
+                        <span class="w-4 h-4 mr-2 inline-flex items-center justify-center bg-gray-400 text-white rounded-full flex-shrink-0">
+                          <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" class="w-3 h-3" viewBox="0 0 24 24">
+                            <path d="M20 6L9 17l-5-5"></path>
+                          </svg>
+                        </span>15% return After 24hrs
+                      </p>
+                    <button class="flex items-center mt-auto text-white bg-gray-400 border-0 py-2 px-4 w-full focus:outline-none hover:bg-gray-500 rounded">Select package
+                      <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-auto" viewBox="0 0 24 24">
+                        <path d="M5 12h14M12 5l7 7-7 7"></path>
+                      </svg>
+                    </button>
+                    
+                  </div>
+                </div>
+                <div class="p-4 xl:w-1/4 md:w-1/2 w-full">
+                  <div class="h-full p-6 rounded-lg border-2 border-blue-500 flex flex-col relative overflow-hidden">
+                    <span class="bg-blue-500 text-white px-3 py-1 tracking-widest text-xs absolute right-0 top-0 rounded-bl">Popurlar</span>
+                    <h2 class="text-sm tracking-widest title-font mb-1 font-medium">Medium Investment Plan</h2>
+                    <h1 class="text-5xl text-gray-100 leading-none flex items-center pb-4 mb-4 border-b border-gray-200">
+                      <span>SILVER</span>
+                      
+                    </h1>
+                    <p class="flex items-center text-black dark:text-gray-300 mb-2">
+                      <span class="w-4 h-4 mr-2 inline-flex items-center justify-center bg-gray-400 text-white rounded-full flex-shrink-0">
+                        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" class="w-3 h-3" viewBox="0 0 24 24">
+                          <path d="M20 6L9 17l-5-5"></path>
+                        </svg>
+                      </span>0.011BTC minimum
+                    </p>
+                    <p class="flex items-center text-black dark:text-gray-300 mb-2">
+                      <span class="w-4 h-4 mr-2 inline-flex items-center justify-center bg-gray-400 text-white rounded-full flex-shrink-0">
+                        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" class="w-3 h-3" viewBox="0 0 24 24">
+                          <path d="M20 6L9 17l-5-5"></path>
+                        </svg>
+                      </span>0.054BTC Maximum
+                    </p>
+                    <p class="flex items-center text-black dark:text-gray-300 mb-2">
+                      <span class="w-4 h-4 mr-2 inline-flex items-center justify-center bg-gray-400 text-white rounded-full flex-shrink-0">
+                        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" class="w-3 h-3" viewBox="0 0 24 24">
+                          <path d="M20 6L9 17l-5-5"></path>
+                        </svg>
+                      </span>Deposit Return
+                    </p>
+                    <p class="flex items-center text-black dark:text-gray-300 mb-6">
+                      <span class="w-4 h-4 mr-2 inline-flex items-center justify-center bg-gray-400 text-white rounded-full flex-shrink-0">
+                        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" class="w-3 h-3" viewBox="0 0 24 24">
+                          <path d="M20 6L9 17l-5-5"></path>
+                        </svg>
+                      </span>35% return After 48hrs
+                    </p>
+                    <button class="flex items-center mt-auto text-white bg-blue-500 border-0 py-2 px-4 w-full focus:outline-none hover:bg-blue-600 rounded">Select Package
+                      <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-auto" viewBox="0 0 24 24">
+                        <path d="M5 12h14M12 5l7 7-7 7"></path>
+                      </svg>
+                    </button>
+                    
+                  </div>
+                </div>
+                <div class="p-4 xl:w-1/4 md:w-1/2 w-full">
+                  <div class="h-full p-6 rounded-lg border-2 border-gray-300 flex flex-col relative overflow-hidden">
+                    <h2 class="text-sm tracking-widest title-font mb-1 font-medium">High Yield Investment Plan</h2>
+                    <h1 class="text-5xl text-gray-100 leading-none flex items-center pb-4 mb-4 border-b border-gray-200">
+                      <span>GOLD</span>
+                
+                    </h1>
+                    <p class="flex items-center text-black dark:text-gray-300 mb-2">
+                      <span class="w-4 h-4 mr-2 inline-flex items-center justify-center bg-gray-400 text-white rounded-full flex-shrink-0">
+                        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" class="w-3 h-3" viewBox="0 0 24 24">
+                          <path d="M20 6L9 17l-5-5"></path>
+                        </svg>
+                      </span>0.054 Minimum
+                    </p>
+                    <p class="flex items-center text-black dark:text-gray-300 mb-2">
+                      <span class="w-4 h-4 mr-2 inline-flex items-center justify-center bg-gray-400 text-white rounded-full flex-shrink-0">
+                        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" class="w-3 h-3" viewBox="0 0 24 24">
+                          <path d="M20 6L9 17l-5-5"></path>
+                        </svg>
+                      </span>0.21 Maximum
+                    </p>
+                    <p class="flex items-center text-black dark:text-gray-300 mb-2">
+                      <span class="w-4 h-4 mr-2 inline-flex items-center justify-center bg-gray-400 text-white rounded-full flex-shrink-0">
+                        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" class="w-3 h-3" viewBox="0 0 24 24">
+                          <path d="M20 6L9 17l-5-5"></path>
+                        </svg>
+                      </span>Deposit Return
+                    </p>
+                    <p class="flex items-center text-black dark:text-gray-300 mb-2">
+                      <span class="w-4 h-4 mr-2 inline-flex items-center justify-center bg-gray-400 text-white rounded-full flex-shrink-0">
+                        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" class="w-3 h-3" viewBox="0 0 24 24">
+                          <path d="M20 6L9 17l-5-5"></path>
+                        </svg>
+                      </span>60% return after 168hrs
+                    </p>
+                    
+                    <button class="flex items-center mt-auto text-white bg-gray-400 border-0 py-2 px-4 w-full focus:outline-none hover:bg-gray-500 rounded">Select Package
+                      <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-auto" viewBox="0 0 24 24">
+                        <path d="M5 12h14M12 5l7 7-7 7"></path>
+                      </svg>
+                    </button>
+                    
+                  </div>
+                </div>
+                <div class="p-4 xl:w-1/4 md:w-1/2 w-full">
+                  <div class="h-full p-6 rounded-lg border-2 border-gray-300 flex flex-col relative overflow-hidden">
+                    <h2 class="text-sm tracking-widest title-font mb-1 font-medium">We call this the maximum</h2>
+                    <h1 class="text-5xl text-gray-100 leading-none flex items-center pb-4 mb-4 border-b border-gray-200">
+                      <span>PREMIUM</span>
+                      
+                    </h1>
+                    <p class="flex items-center text-black dark:text-gray-300 mb-2">
+                      <span class="w-4 h-4 mr-2 inline-flex items-center justify-center bg-gray-400 text-white rounded-full flex-shrink-0">
+                        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" class="w-3 h-3" viewBox="0 0 24 24">
+                          <path d="M20 6L9 17l-5-5"></path>
+                        </svg>
+                      </span>1BTC minimum
+                    </p>
+                    <p class="flex items-center text-black dark:text-gray-300 mb-2">
+                      <span class="w-4 h-4 mr-2 inline-flex items-center justify-center bg-gray-400 text-white rounded-full flex-shrink-0">
+                        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" class="w-3 h-3" viewBox="0 0 24 24">
+                          <path d="M20 6L9 17l-5-5"></path>
+                        </svg>
+                      </span>10BTC Maximum
+                    </p>
+                    <p class="flex items-center text-black dark:text-gray-300 mb-2">
+                      <span class="w-4 h-4 mr-2 inline-flex items-center justify-center bg-gray-400 text-white rounded-full flex-shrink-0">
+                        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" class="w-3 h-3" viewBox="0 0 24 24">
+                          <path d="M20 6L9 17l-5-5"></path>
+                        </svg>
+                      </span>Deposit back
+                    </p>
+                    <p class="flex items-center text-black dark:text-gray-300 mb-2">
+                      <span class="w-4 h-4 mr-2 inline-flex items-center justify-center bg-gray-400 text-white rounded-full flex-shrink-0">
+                        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" class="w-3 h-3" viewBox="0 0 24 24">
+                          <path d="M20 6L9 17l-5-5"></path>
+                        </svg>
+                      </span>82% Profit return after 240hrs
+                    </p>
+                    
+                    <button class="flex items-center mt-auto text-white bg-gray-400 border-0 py-2 px-4 w-full focus:outline-none hover:bg-gray-500 rounded">Select Package
+                      <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-auto" viewBox="0 0 24 24">
+                        <path d="M5 12h14M12 5l7 7-7 7"></path>
+                      </svg>
+                    </button>
+                    
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+    </div>
+    <!-- <script>
+        let  btn = document.querySelector("#btn");
+        let sidebar = document.querySelector(".sidebar");
+        
+        btn.onclick = function(){
+            sidebar.classList.toggle("active");
+        }
+    </script> -->
+</body>
+</html>

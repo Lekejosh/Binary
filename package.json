@@ -1,0 +1,22 @@
+{
+  "name": "binary",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+    "start": "nodemon app.js",
+    "build-css": "tailwindcss build src/styles.css -o public/styles.css"
+  },
+  "author": "Adeleke Joshua",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.26.0",
+    "body-parser": "^1.19.2",
+    "ejs": "^3.1.6",
+    "express": "^4.17.3",
+    "tailwindcss": "^3.0.23"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
