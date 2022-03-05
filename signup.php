@@ -53,9 +53,9 @@ session_start();
         <script src="https://cdn.tailwindcss.com"></script>
     <title>User Registration|Benchgrowth</title>
 </head>
-<body class="bg-cyan-500 dark:bg-gradient-to-r from-indigo-500 to-black transition-colors duration-300">
+<body class="bg-gradient-to-r from-indigo-500 to-black transition-colors duration-300">
      <!-- Navbar -->
-     <header class="text-black text-1xl dark:text-white body-font ">
+     <header class="text-1xl text-white body-font ">
         <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
             <nav class="flex lg:w-2/5 flex-wrap items-center md:ml-auto">
                 <a class="mr-5" href="./index.html">Home</a>  
@@ -63,10 +63,10 @@ session_start();
                 <a class="mr-5" href="./contact.html">Contact Us</a>  
                 <a class="mr-5" href="./fn.html" id="financial-news">Financial News</a>                
             </nav>
-            <a class="flex order-first lg:order-none lg:w-1/5 text-xl font-medium items-center text-gray-900 dark:text-white lg:items-center lg:justify-center mb-4 md:mb-0" href="#">
+            <a class="flex order-first lg:order-none lg:w-1/5 text-xl font-medium items-center text-white lg:items-center lg:justify-center mb-4 md:mb-0" href="#">
                 <span style="font-family: 'Dancing Script', cursive">Benchgrowth</span>
             </a>
-            <div class="lg:w-2/5 inline-flex dark:text-black lg:justify-end ml-5 lg:ml-0">
+            <div class="lg:w-2/5 inline-flex text-black lg:justify-end ml-5 lg:ml-0">
               <a href="./login.php">
                 <button class="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0">Login/Signup
                 </button></a>
@@ -81,10 +81,10 @@ session_start();
         </div>
         <hr>
     </header>
-    <section class="text-gray-600 dark:text-gray-200 body-font">
+    <section class="text-gray-200 body-font">
         <form class="container px-5 py-24 mx-auto flex flex-wrap items-center" method="post" action>
           <div class="lg:w-3/5 md:w-1/2 md:pr-16 lg:pr-0 pr-0">
-            <h1 class="title-font font-medium text-3xl text-gray-900 dark:text-white">User Reistration</h1>
+            <h1 class="title-font font-medium text-3xl text-white">User Reistration</h1>
             <p class="leading-relaxed mt-4">For help or Assistance, please <a href="./contact.html">Contact Us</a>.</p>
           </div>
           <div class="lg:w-2/6 md:w-1/2 bg-gray-100 rounded-lg p-8 flex flex-col md:ml-auto w-full mt-10 md:mt-0">
