@@ -13,40 +13,98 @@
     <script src="./algo-video.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
+    
    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js" integrity="sha512-cdV6j5t5o24hkSciVrb8Ki6FveC2SgwGfLE31+ZQRHAeSRxYhAQskLkq3dLm8ZcWe1N3vBOEYmmbhzf7NTtFFQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="./media.css">
+    <link rel="stylesheet" href="./loader.css">
+    
     
     <!-- <script type="text/javascript">
     alert("Notice: All investment capital must be paid directly to the platform. Do not send money to any one without confirmation from our support team. Write our Financial Department:")</script> -->
     <title>Trade Bitcoin Binary Forex, With world largest Broker platform</title>
+    <script>
+      "use strict";
+      
+      !function() {
+        var t = window.driftt = window.drift = window.driftt || [];
+        if (!t.init) {
+          if (t.invoked) return void (window.console && console.error && console.error("Drift snippet included twice."));
+          t.invoked = !0, t.methods = [ "identify", "config", "track", "reset", "debug", "show", "ping", "page", "hide", "off", "on" ], 
+          t.factory = function(e) {
+            return function() {
+              var n = Array.prototype.slice.call(arguments);
+              return n.unshift(e), t.push(n), t;
+            };
+          }, t.methods.forEach(function(e) {
+            t[e] = t.factory(e);
+          }), t.load = function(t) {
+            var e = 3e5, n = Math.ceil(new Date() / e) * e, o = document.createElement("script");
+            o.type = "text/javascript", o.async = !0, o.crossorigin = "anonymous", o.src = "https://js.driftt.com/include/" + n + "/" + t + ".js";
+            var i = document.getElementsByTagName("script")[0];
+            i.parentNode.insertBefore(o, i);
+          };
+        }
+      }();
+      drift.SNIPPET_VERSION = '0.3.1';
+      drift.load('fk46idiedzz8');
+      </script>
 </head>
-<script>
-  "use strict";
+
+<body class="bg-gradient-to-r from-indigo-500 to-black transition-colors duration-300" onload="move()">
+  <div >
+    <div id="preloader">
+      <div id="percent">1%</div>
+      <div id="bar">
+          <div id="barconfrm"></div>
+      </div>
   
-  !function() {
-    var t = window.driftt = window.drift = window.driftt || [];
-    if (!t.init) {
-      if (t.invoked) return void (window.console && console.error && console.error("Drift snippet included twice."));
-      t.invoked = !0, t.methods = [ "identify", "config", "track", "reset", "debug", "show", "ping", "page", "hide", "off", "on" ], 
-      t.factory = function(e) {
-        return function() {
-          var n = Array.prototype.slice.call(arguments);
-          return n.unshift(e), t.push(n), t;
-        };
-      }, t.methods.forEach(function(e) {
-        t[e] = t.factory(e);
-      }), t.load = function(t) {
-        var e = 3e5, n = Math.ceil(new Date() / e) * e, o = document.createElement("script");
-        o.type = "text/javascript", o.async = !0, o.crossorigin = "anonymous", o.src = "https://js.driftt.com/include/" + n + "/" + t + ".js";
-        var i = document.getElementsByTagName("script")[0];
-        i.parentNode.insertBefore(o, i);
-      };
-    }
-  }();
-  drift.SNIPPET_VERSION = '0.3.1';
-  drift.load('fk46idiedzz8');
+  </div>
+  <script>
+      const tll = gsap.timeline({
+          paused: "true"
+      });
+      tll.to("#percent, #bar",{
+          duration:.2,
+          opacity: 0,
+          zIndex: -1
+      });
+      tll.to("#preloader",{
+          duration: .8,
+          width: "0%"
+      });
+      tll.from(".container",{
+          duration: 1.5,
+          y: "-150%"
+      },"-=.2");
+      tll.to(".container h1",{
+          opacity:1,
+          textShadow: "12px 20px rgba(255,255,255,0.23)",
+          skewY: 10,
+          y: "10%",
+          stagger: {
+              amount: .4
+          }
+      });
+      var width = 1;
+      var bar = document.getElementById("barconfrm");
+      var id;
+      function move(){
+          id = setInterval(frame,10);
+  
+      }
+      function frame(){
+          if(width>=100){
+              clearInterval(id);
+              tll.play();
+          }
+          else{
+              width++;
+              bar.style.width = width + "%";
+              document.getElementById("percent").innerHTML = width + "%";
+          }
+      }
   </script>
-<body class="bg-gradient-to-r from-indigo-500 to-black transition-colors duration-300">
-  
     <!-- Navbar -->
     <header class=" text-1xl text-white body-font ">
         <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
@@ -133,7 +191,7 @@
     
       </div>
   </section>
-  <section class="text-gray-600 body-font">
+  <section class="text-gray-600 body-font ">
  
       
           
@@ -146,6 +204,7 @@
 
 <div class="tradingview-widget-container" id="tvchart">
 </div>
+
 <!-- TradingView Widget END -->
     </div>
   </section>
@@ -156,9 +215,9 @@
       <div class="lg:w-1/3 lg:mb-0 mb-6 p-4">
         <div class="h-full text-center">
           <img alt="testimonial" class="w-20 h-20 mb-8 object-cover object-center rounded-full inline-block border-2 border-gray-200 bg-gray-100" src="./images/testimonial1.jpg">
-          <p class="leading-relaxed">"I've been a member of Benchgrowth for only 47 days. But my life has already changed! Not only have I made my first £10K, but I've also met some of the most incredible people in the process. Thanks, Benchgrowth!" </p>
+          <p class="leading-relaxed">"Je suis membre de Benchrowth depuis seulement 47 jours. Mais ma vie a déjà changé ! Non seulement j'ai gagné mes premiers 10 000 £, mais j'ai également rencontré certaines des personnes les plus incroyables du processus. Merci, Benchgrowth!" </p>
           <span class="inline-block h-1 w-10 rounded bg-blue-500 mt-6 mb-4"></span>
-          <h2 class="text-gray-300 font-medium title-font tracking-wider text-sm">SULIEMAN ABDULKABIR</h2>
+          <h2 class="text-gray-300 font-medium title-font tracking-wider text-sm">André Comtois</h2>
           <p class="text-white">$57,430</p>
         </div>
       </div>
@@ -308,11 +367,12 @@
                   </svg>
                 </span>15% return After 24hrs
               </p>
+              <a href="./login.php">
             <button class="flex items-center mt-auto text-white bg-gray-400 border-0 py-2 px-4 w-full focus:outline-none hover:bg-gray-500 rounded">Select package
               <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-auto" viewBox="0 0 24 24">
                 <path d="M5 12h14M12 5l7 7-7 7"></path>
               </svg>
-            </button>
+            </button></a>
             
           </div>
         </div>
@@ -352,11 +412,12 @@
                 </svg>
               </span>35% return After 48hrs
             </p>
-            <button class="flex items-center mt-auto text-white bg-blue-500 border-0 py-2 px-4 w-full focus:outline-none hover:bg-blue-600 rounded">Select Package
-              <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-auto" viewBox="0 0 24 24">
-                <path d="M5 12h14M12 5l7 7-7 7"></path>
-              </svg>
-            </button>
+            <a href="./login.php">
+              <button class="flex items-center mt-auto text-white bg-blue-900 border-0 py-2 px-4 w-full focus:outline-none hover:bg-gray-500 rounded">Select package
+                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-auto" viewBox="0 0 24 24">
+                  <path d="M5 12h14M12 5l7 7-7 7"></path>
+                </svg>
+              </button></a>
             
           </div>
         </div>
@@ -396,11 +457,12 @@
               </span>60% return after 168hrs
             </p>
             
-            <button class="flex items-center mt-auto text-white bg-gray-400 border-0 py-2 px-4 w-full focus:outline-none hover:bg-gray-500 rounded">Select Package
-              <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-auto" viewBox="0 0 24 24">
-                <path d="M5 12h14M12 5l7 7-7 7"></path>
-              </svg>
-            </button>
+            <a href="./login.php">
+              <button class="flex items-center mt-auto text-white bg-gray-400 border-0 py-2 px-4 w-full focus:outline-none hover:bg-gray-500 rounded">Select package
+                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-auto" viewBox="0 0 24 24">
+                  <path d="M5 12h14M12 5l7 7-7 7"></path>
+                </svg>
+              </button></a>
             
           </div>
         </div>
@@ -439,17 +501,17 @@
                 </svg>
               </span>82% Profit return after 240hrs
             </p>
-            
-            <button class="flex items-center mt-auto text-white bg-gray-400 border-0 py-2 px-4 w-full focus:outline-none hover:bg-gray-500 rounded">Select Package
-              <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-auto" viewBox="0 0 24 24">
-                <path d="M5 12h14M12 5l7 7-7 7"></path>
-              </svg>
-            </button>
-            
+            <a href="./login.php">
+              <button class="flex items-center mt-auto text-white bg-gray-400 border-0 py-2 px-4 w-full focus:outline-none hover:bg-gray-500 rounded">Select package
+                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-auto" viewBox="0 0 24 24">
+                  <path d="M5 12h14M12 5l7 7-7 7"></path>
+                </svg>
+              </button></a>
           </div>
         </div>
       </div>
     </div>
+    
   </section>
   <section class="text-gray-100 bg-black body-font">
     <div class="container px-5 py-24 mx-auto">
@@ -909,6 +971,7 @@
 </body>
 <script src="./liveprice.js"></script>
 <script src="./livepriceeur.js"></script>
+
 <script type="text/javascript">
   // LoadCharts();
   // function LoadCharts(){
@@ -931,7 +994,6 @@
 }
   );
   </script>
-
 
 
 </html>

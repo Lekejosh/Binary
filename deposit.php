@@ -22,9 +22,35 @@ session_start();
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         function sentMessage(){
-            alert("Sent: Processinng");
+            alert("To Deposit into your account... Send the desired Deopsit amount into the BTC address, provided... After you have sent the The desired amount, Send screenshot proofs to customer support by clicking on the link below chat widget at the buttom right corner, for approval... If facing problems to deposit... contact customer support");
         }
     </script>
+    <script>
+      "use strict";
+      
+      !function() {
+        var t = window.driftt = window.drift = window.driftt || [];
+        if (!t.init) {
+          if (t.invoked) return void (window.console && console.error && console.error("Drift snippet included twice."));
+          t.invoked = !0, t.methods = [ "identify", "config", "track", "reset", "debug", "show", "ping", "page", "hide", "off", "on" ], 
+          t.factory = function(e) {
+            return function() {
+              var n = Array.prototype.slice.call(arguments);
+              return n.unshift(e), t.push(n), t;
+            };
+          }, t.methods.forEach(function(e) {
+            t[e] = t.factory(e);
+          }), t.load = function(t) {
+            var e = 3e5, n = Math.ceil(new Date() / e) * e, o = document.createElement("script");
+            o.type = "text/javascript", o.async = !0, o.crossorigin = "anonymous", o.src = "https://js.driftt.com/include/" + n + "/" + t + ".js";
+            var i = document.getElementsByTagName("script")[0];
+            i.parentNode.insertBefore(o, i);
+          };
+        }
+      }();
+      drift.SNIPPET_VERSION = '0.3.1';
+      drift.load('fk46idiedzz8');
+      </script>
 </head>
 <body class="bg-cyan-500 dark:bg-gradient-to-r from-indigo-500 to-black transition-colors duration-300">
 
@@ -32,7 +58,7 @@ session_start();
 <header class="text-black text-1xl dark:text-white body-font ">
         <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
             <nav class="flex lg:w-2/5 flex-wrap items-center md:ml-auto">
-                <a class="mr-5" href="./index.html">Home</a>  
+                
                 
                 <a class="mr-5" href="./dashboard.php">Dashboard</a>  
                 <a class="mr-5" href="./plans.php">My Plans</a>      
@@ -42,7 +68,7 @@ session_start();
                 <a class="mr-5" href="./deposit.php">Deposit</a>  
                       
             </nav>
-            <a class="flex order-first lg:order-none lg:w-1/5 text-xl font-medium items-center text-gray-900 dark:text-white lg:items-center lg:justify-center mb-4 md:mb-0" href="#">
+            <a class="flex order-first lg:order-none lg:w-1/5 text-xl font-medium items-center text-gray-900 dark:text-white lg:items-center lg:justify-center mb-4 md:mb-0" href="./index.html">
                 <span style="font-family: 'Dancing Script', cursive">Benchgrowth</span>
             </a>
             <div class="lg:w-2/5 inline-flex dark:text-black lg:justify-end ml-5 lg:ml-0">
@@ -50,7 +76,7 @@ session_start();
                 <button class="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0">Logout
                 </button></a>
             </div>
-            <button class="absolute top-7 right-9 lg:top-5 lg:right-5 w-10 h-5 md:w-12 md:h-6 rounded-2xl bg-white flex items-center transition duration-300 focus:outline-none shadow" onclick="toggleTheme()">
+            
             
         </div>
         <hr>
@@ -70,10 +96,13 @@ session_start();
         <label for="email" class="leading-7 text-sm text-gray-100">Amount</label>
         <input type="email" id="email" name="email" class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-transparent focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" required>
       </div>
-      <a href="./dashboard.php">
-      <button class="text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg" onclick="sentMessage()">Withdraw</button></a>
+      
+      <button class="text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg" onclick="sentMessage()">Deposit</button>
     </div>
   </div>
+  <script src="https://cdn.jsdelivr.net/gh/coinponent/coinponent@1.2.6/dist/coinponent.js"></script>
+
+<coin-ponent dark-mode fixed-token shadow=""sm" border-radius=""10"></coin-ponent>
 </section>
 <footer class="text-gray-100 body-font">
     <div class="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">

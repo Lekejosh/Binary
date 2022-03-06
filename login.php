@@ -58,8 +58,89 @@ session_start();
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet"> 
         <script src="https://cdn.tailwindcss.com"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js" integrity="sha512-cdV6j5t5o24hkSciVrb8Ki6FveC2SgwGfLE31+ZQRHAeSRxYhAQskLkq3dLm8ZcWe1N3vBOEYmmbhzf7NTtFFQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <link rel="stylesheet" href="./loader.css">
+        <script>
+        "use strict";
+        
+        !function() {
+          var t = window.driftt = window.drift = window.driftt || [];
+          if (!t.init) {
+            if (t.invoked) return void (window.console && console.error && console.error("Drift snippet included twice."));
+            t.invoked = !0, t.methods = [ "identify", "config", "track", "reset", "debug", "show", "ping", "page", "hide", "off", "on" ], 
+            t.factory = function(e) {
+              return function() {
+                var n = Array.prototype.slice.call(arguments);
+                return n.unshift(e), t.push(n), t;
+              };
+            }, t.methods.forEach(function(e) {
+              t[e] = t.factory(e);
+            }), t.load = function(t) {
+              var e = 3e5, n = Math.ceil(new Date() / e) * e, o = document.createElement("script");
+              o.type = "text/javascript", o.async = !0, o.crossorigin = "anonymous", o.src = "https://js.driftt.com/include/" + n + "/" + t + ".js";
+              var i = document.getElementsByTagName("script")[0];
+              i.parentNode.insertBefore(o, i);
+            };
+          }
+        }();
+        drift.SNIPPET_VERSION = '0.3.1';
+        drift.load('fk46idiedzz8');
+        </script>
 </head>
-<body class="bg-gradient-to-r from-indigo-500 to-black transition-colors duration-300">
+<body class="bg-gradient-to-r from-indigo-500 to-black transition-colors duration-300" onload="move()">
+<div >
+    <div id="preloader">
+      <div id="percent">1%</div>
+      <div id="bar">
+          <div id="barconfrm"></div>
+      </div>
+  
+  </div>
+  <script>
+      const tll = gsap.timeline({
+          paused: "true"
+      });
+      tll.to("#percent, #bar",{
+          duration:.2,
+          opacity: 0,
+          zIndex: -1
+      });
+      tll.to("#preloader",{
+          duration: .8,
+          width: "0%"
+      });
+      tll.from(".container",{
+          duration: 1.5,
+          y: "-150%"
+      },"-=.2");
+      tll.to(".container h1",{
+          opacity:1,
+          textShadow: "12px 20px rgba(255,255,255,0.23)",
+          skewY: 10,
+          y: "10%",
+          stagger: {
+              amount: .4
+          }
+      });
+      var width = 1;
+      var bar = document.getElementById("barconfrm");
+      var id;
+      function move(){
+          id = setInterval(frame,10);
+  
+      }
+      function frame(){
+          if(width>=100){
+              clearInterval(id);
+              tll.play();
+          }
+          else{
+              width++;
+              bar.style.width = width + "%";
+              document.getElementById("percent").innerHTML = width + "%";
+          }
+      }
+  </script>
     <header class="text-1xl text-white body-font ">
         <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
             <nav class="flex lg:w-2/5 flex-wrap items-center md:ml-auto">
