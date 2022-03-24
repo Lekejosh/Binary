@@ -54,7 +54,7 @@ body {
 #register .upload-profile-image .camera-icon {
   position: absolute;
   top: 70px;
-  width: 70px !important;
+  width: 60px !important;
   filter: invert(30%) !important;
 }
 
