@@ -1,411 +1,78 @@
-<?php 
-session_start();
-
-	include("connection.php");
-	include("functions.php");
-
-
-	if($_SERVER['REQUEST_METHOD'] == "POST")
-	{
-		//something was posted
-		$first_name =$_POST['first_name'];
-		$last_name =$_POST['last_name'];
-		$email =$_POST['email'];
-		$phone =$_POST['phone'];
-		$user_name = $_POST['user_name'];
-		$password = $_POST['password'];
-		$dob =$_POST['dob'];
-		$address =$_POST['address'];
-		$country =$_POST['country'];
-		$risk =$_POST['risk'];
-
-		if(!empty($user_name) && !empty($first_name) && !empty($last_name) && !empty($email) && !empty($phone) &&!empty($password) && !empty($dob) && !empty($address) && !empty($country) && !empty($risk) && !is_numeric($user_name))
-		{
-
-			//save to database
-			$user_id = random_num(20);
-			$query = "insert into users (user_id,first_name,last_name,email,phone,user_name,password,dob,address,country,risk) values ('$user_id','$first_name','$last_name','$email','$phone','$user_name','$password','$dob','$address','$country','$risk')";
-
-			mysqli_query($con, $query);
-
-			header("Location: login.php");
-			die;
-		}else
-		{
-			echo "Please enter some valid information!";
-		}
-	}
-?>
-
-
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet"> 
-        <script src="https://cdn.tailwindcss.com"></script>
-    <title>User Registration|Benchgrowth</title>
-    <script>
-        "use strict";
-        
-        !function() {
-          var t = window.driftt = window.drift = window.driftt || [];
-          if (!t.init) {
-            if (t.invoked) return void (window.console && console.error && console.error("Drift snippet included twice."));
-            t.invoked = !0, t.methods = [ "identify", "config", "track", "reset", "debug", "show", "ping", "page", "hide", "off", "on" ], 
-            t.factory = function(e) {
-              return function() {
-                var n = Array.prototype.slice.call(arguments);
-                return n.unshift(e), t.push(n), t;
-              };
-            }, t.methods.forEach(function(e) {
-              t[e] = t.factory(e);
-            }), t.load = function(t) {
-              var e = 3e5, n = Math.ceil(new Date() / e) * e, o = document.createElement("script");
-              o.type = "text/javascript", o.async = !0, o.crossorigin = "anonymous", o.src = "https://js.driftt.com/include/" + n + "/" + t + ".js";
-              var i = document.getElementsByTagName("script")[0];
-              i.parentNode.insertBefore(o, i);
-            };
-          }
-        }();
-        drift.SNIPPET_VERSION = '0.3.1';
-        drift.load('fk46idiedzz8');
-        </script>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SIGN UP</title>
+  <link rel="stylesheet" href="../public/css/styles.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 </head>
-<body class="bg-gradient-to-r from-indigo-500 to-black transition-colors duration-300">
-     <!-- Navbar -->
-     <header class="text-1xl text-white body-font ">
-        <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
-            <nav class="flex lg:w-2/5 flex-wrap items-center md:ml-auto">
-                <a class="mr-5" href="./index.html">Home</a>  
-                
-                <a class="mr-5" href="./contact.html">Contact Us</a>  
-                <a class="mr-5" href="./fn.html" id="financial-news">Financial News</a>                
-            </nav>
-            <a class="flex order-first lg:order-none lg:w-1/5 text-xl font-medium items-center text-white lg:items-center lg:justify-center mb-4 md:mb-0" href="#">
-                <span style="font-family: 'Dancing Script', cursive">Benchgrowth</span>
-            </a>
-            <div class="lg:w-2/5 inline-flex text-black lg:justify-end ml-5 lg:ml-0">
-              <a href="./login.php">
-                <button class="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0">Login/Signup
-                </button></a>
-            </div>
-            <button class="absolute top-7 right-9 lg:top-5 lg:right-5 w-10 h-5 md:w-12 md:h-6 rounded-2xl bg-white flex items-center transition duration-300 focus:outline-none shadow" onclick="toggleTheme()">
-                <div id="switch-toggle" class="w-6 h-6 md:w-7 md:h-7 relative rounded-full transition duration-500 transform bg-yellow-500 -translate-x-2 p-1 text-white ">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
-                    </svg>
-                </div>
-            </button>
+<body>
+  <main id="main-area">
+    <!-- #registration area-->
+    <section class="particleCont" id="register">
+      <div class="partiku" id="particles-js"> </div>
+      <div class="row m-0">
+        <div class="col-lg-4 offset-lg-2">
+          <div class="text-center pb-5">
+          <h1 class="login-title text-dark">Sign Up</h1>
+          <span class="font-ubuntu text-black">I already have an account <a href="./login1.php">Login</a></span>
         </div>
-        <hr>
-    </header>
-    <section class="text-gray-200 body-font">
-        <form class="container px-5 py-24 mx-auto flex flex-wrap items-center" method="post" action>
-          <div class="lg:w-3/5 md:w-1/2 md:pr-16 lg:pr-0 pr-0">
-            <h1 class="title-font font-medium text-3xl text-white">User Reistration</h1>
-            <p class="leading-relaxed mt-4">For help or Assistance, please <a href="./contact.html">Contact Us</a>.</p>
+        <div class="upload-profile-image d-flex justify-content-center pb-5">
+          <div class="d-flex justify-content-center">
+
+            <div class="text-center">
+              <div class="d-flex justify-content-center">
+                <img class="camera-icon" src="../public/images/camera-solid-svgrepo-com.svg" alt="camera" srcset="">
+              </div>
+              <img src="../public/images/avartar.png" style="width: 200px; height: 200px;" class="img rounded-circle" alt="profile" srcset="">
+              <small class="form-text text-black-50">Choose Image</small>
+              <input type="file" class="form-control-file" name="profileUpload" id="upload-profile">
+            </div>
           </div>
-          <div class="lg:w-2/6 md:w-1/2 bg-gray-100 rounded-lg p-8 flex flex-col md:ml-auto w-full mt-10 md:mt-0">
-            <h2 class="text-gray-900 text-lg font-medium title-font mb-5">Sign Up</h2>
-            <div class="relative mb-4">
-              <label for="first_name" class="leading-7 text-sm text-gray-600">First Name</label>
-              <input type="first_name" id="full-name" name="first_name" class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" required>
+          
+        </div>
+        <div class="d-flex justify-content-center">
+            <form action="register.php" method="post" enctype="multipart/form-data" id="reg-form">
+            <div class="form-row">
+              <div class="col">
+                <input type="text" name="firstName" id="firstName" class="form-control" placeholder="First Name">
+              </div>
+              <div class="col">
+                <input type="text" name="lastName" id="lastName" class="form-control" placeholder="Last Name">
+              </div>
             </div>
-            <div class="relative mb-4">
-              <label for="last_name" class="leading-7 text-sm text-gray-600">Last Name</label>
-              <input type="last_name" id="full-name" name="last_name"  class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" required>
+
+            <div class="form-row my-4">
+              <div class="col">
+                <input type="email" required name="email" class="form-control" id="email" placeholder="Email">
+              </div>
             </div>
-            <div class="relative mb-4">
-                <label for="email" class="leading-7 text-sm text-gray-600">Email</label>
-                <input type="email" id="email" name="email"  class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" required>
+            <div class="form-row my-4">
+              <div class="col">
+                <input type="password" required name="password" class="form-control" id="password" placeholder="Password">
               </div>
-              
-              <div class="relative mb-4">
-                <label for="phone" class="leading-7 text-sm text-gray-600">Enter phone number</label>
-                <input type="tel" id="phone" name="phone" pattern="+[0-9]{13}" class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" required>
-              </div>
-              <div class="relative mb-4">
-              <label for="user_name" class="leading-7 text-sm text-gray-600">UserName</label>
-              <input type="user_name" id="username" name="user_name"  class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" required>
             </div>
-            <div class="relative mb-4">
-              <label for="password" class="leading-7 text-sm text-gray-600">Password</label>
-              <input type="password" id="password" name="password"  class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" required>
+            <div class="form-row my-4">
+              <div class="col">
+                <input type="password" required name="confirm_pwd" class="form-control" id="confirm_pwd" placeholder="Confirm Password">
+              </div>
             </div>
-              <div class="relative mb-4">
-                <label for="dob" class="leading-7 text-sm text-gray-600">Date of Birth</label>
-                <input type="date" id="date" name="dob" class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" required>
-              </div>
-              <div class="relative mb-4">
-                <label for="address" class="leading-7 text-sm text-gray-600">Address</label>
-                <input type="address" id="address" name="address"  class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" required>
-              </div>
-              <div class="relative mb-4">
-                <label for="country" class="leading-7 text-sm text-gray-600">Country</label>
-                               <select id="country" name="country" class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" type="country" required>
-                    <option value="Afghanistan">Afghanistan</option>
-                    <option value="Åland Islands">Åland Islands</option>
-                    <option value="Albania">Albania</option>
-                    <option value="Algeria">Algeria</option>
-                    <option value="American Samoa">American Samoa</option>
-                    <option value="Andorra">Andorra</option>
-                    <option value="Angola">Angola</option>
-                    <option value="Anguilla">Anguilla</option>
-                    <option value="Antarctica">Antarctica</option>
-                    <option value="Antigua and Barbuda">Antigua and Barbuda</option>
-                    <option value="Argentina">Argentina</option>
-                    <option value="Armenia">Armenia</option>
-                    <option value="Aruba">Aruba</option>
-                    <option value="Australia">Australia</option>
-                    <option value="Austria">Austria</option>
-                    <option value="Azerbaijan">Azerbaijan</option>
-                    <option value="Bahamas">Bahamas</option>
-                    <option value="Bahrain">Bahrain</option>
-                    <option value="Bangladesh">Bangladesh</option>
-                    <option value="Barbados">Barbados</option>
-                    <option value="Belarus">Belarus</option>
-                    <option value="Belgium">Belgium</option>
-                    <option value="Belize">Belize</option>
-                    <option value="Benin">Benin</option>
-                    <option value="Bermuda">Bermuda</option>
-                    <option value="Bhutan">Bhutan</option>
-                    <option value="Bolivia">Bolivia</option>
-                    <option value="Bosnia and Herzegovina">Bosnia and Herzegovina</option>
-                    <option value="Botswana">Botswana</option>
-                    <option value="Bouvet Island">Bouvet Island</option>
-                    <option value="Brazil">Brazil</option>
-                    <option value="British Indian Ocean Territory">British Indian Ocean Territory</option>
-                    <option value="Brunei Darussalam">Brunei Darussalam</option>
-                    <option value="Bulgaria">Bulgaria</option>
-                    <option value="Burkina Faso">Burkina Faso</option>
-                    <option value="Burundi">Burundi</option>
-                    <option value="Cambodia">Cambodia</option>
-                    <option value="Cameroon">Cameroon</option>
-                    <option value="Canada">Canada</option>
-                    <option value="Cape Verde">Cape Verde</option>
-                    <option value="Cayman Islands">Cayman Islands</option>
-                    <option value="Central African Republic">Central African Republic</option>
-                    <option value="Chad">Chad</option>
-                    <option value="Chile">Chile</option>
-                    <option value="China">China</option>
-                    <option value="Christmas Island">Christmas Island</option>
-                    <option value="Cocos (Keeling) Islands">Cocos (Keeling) Islands</option>
-                    <option value="Colombia">Colombia</option>
-                    <option value="Comoros">Comoros</option>
-                    <option value="Congo">Congo</option>
-                    <option value="Congo, The Democratic Republic of The">Congo, The Democratic Republic of The</option>
-                    <option value="Cook Islands">Cook Islands</option>
-                    <option value="Costa Rica">Costa Rica</option>
-                    <option value="Cote D'ivoire">Cote D'ivoire</option>
-                    <option value="Croatia">Croatia</option>
-                    <option value="Cuba">Cuba</option>
-                    <option value="Cyprus">Cyprus</option>
-                    <option value="Czech Republic">Czech Republic</option>
-                    <option value="Denmark">Denmark</option>
-                    <option value="Djibouti">Djibouti</option>
-                    <option value="Dominica">Dominica</option>
-                    <option value="Dominican Republic">Dominican Republic</option>
-                    <option value="Ecuador">Ecuador</option>
-                    <option value="Egypt">Egypt</option>
-                    <option value="El Salvador">El Salvador</option>
-                    <option value="Equatorial Guinea">Equatorial Guinea</option>
-                    <option value="Eritrea">Eritrea</option>
-                    <option value="Estonia">Estonia</option>
-                    <option value="Ethiopia">Ethiopia</option>
-                    <option value="Falkland Islands (Malvinas)">Falkland Islands (Malvinas)</option>
-                    <option value="Faroe Islands">Faroe Islands</option>
-                    <option value="Fiji">Fiji</option>
-                    <option value="Finland">Finland</option>
-                    <option value="France">France</option>
-                    <option value="French Guiana">French Guiana</option>
-                    <option value="French Polynesia">French Polynesia</option>
-                    <option value="French Southern Territories">French Southern Territories</option>
-                    <option value="Gabon">Gabon</option>
-                    <option value="Gambia">Gambia</option>
-                    <option value="Georgia">Georgia</option>
-                    <option value="Germany">Germany</option>
-                    <option value="Ghana">Ghana</option>
-                    <option value="Gibraltar">Gibraltar</option>
-                    <option value="Greece">Greece</option>
-                    <option value="Greenland">Greenland</option>
-                    <option value="Grenada">Grenada</option>
-                    <option value="Guadeloupe">Guadeloupe</option>
-                    <option value="Guam">Guam</option>
-                    <option value="Guatemala">Guatemala</option>
-                    <option value="Guernsey">Guernsey</option>
-                    <option value="Guinea">Guinea</option>
-                    <option value="Guinea-bissau">Guinea-bissau</option>
-                    <option value="Guyana">Guyana</option>
-                    <option value="Haiti">Haiti</option>
-                    <option value="Heard Island and Mcdonald Islands">Heard Island and Mcdonald Islands</option>
-                    <option value="Holy See (Vatican City State)">Holy See (Vatican City State)</option>
-                    <option value="Honduras">Honduras</option>
-                    <option value="Hong Kong">Hong Kong</option>
-                    <option value="Hungary">Hungary</option>
-                    <option value="Iceland">Iceland</option>
-                    <option value="India">India</option>
-                    <option value="Indonesia">Indonesia</option>
-                    <option value="Iran, Islamic Republic of">Iran, Islamic Republic of</option>
-                    <option value="Iraq">Iraq</option>
-                    <option value="Ireland">Ireland</option>
-                    <option value="Isle of Man">Isle of Man</option>
-                    <option value="Israel">Israel</option>
-                    <option value="Italy">Italy</option>
-                    <option value="Jamaica">Jamaica</option>
-                    <option value="Japan">Japan</option>
-                    <option value="Jersey">Jersey</option>
-                    <option value="Jordan">Jordan</option>
-                    <option value="Kazakhstan">Kazakhstan</option>
-                    <option value="Kenya">Kenya</option>
-                    <option value="Kiribati">Kiribati</option>
-                    <option value="Korea, Democratic People's Republic of">Korea, Democratic People's Republic of</option>
-                    <option value="Korea, Republic of">Korea, Republic of</option>
-                    <option value="Kuwait">Kuwait</option>
-                    <option value="Kyrgyzstan">Kyrgyzstan</option>
-                    <option value="Lao People's Democratic Republic">Lao People's Democratic Republic</option>
-                    <option value="Latvia">Latvia</option>
-                    <option value="Lebanon">Lebanon</option>
-                    <option value="Lesotho">Lesotho</option>
-                    <option value="Liberia">Liberia</option>
-                    <option value="Libyan Arab Jamahiriya">Libyan Arab Jamahiriya</option>
-                    <option value="Liechtenstein">Liechtenstein</option>
-                    <option value="Lithuania">Lithuania</option>
-                    <option value="Luxembourg">Luxembourg</option>
-                    <option value="Macao">Macao</option>
-                    <option value="Macedonia, The Former Yugoslav Republic of">Macedonia, The Former Yugoslav Republic of</option>
-                    <option value="Madagascar">Madagascar</option>
-                    <option value="Malawi">Malawi</option>
-                    <option value="Malaysia">Malaysia</option>
-                    <option value="Maldives">Maldives</option>
-                    <option value="Mali">Mali</option>
-                    <option value="Malta">Malta</option>
-                    <option value="Marshall Islands">Marshall Islands</option>
-                    <option value="Martinique">Martinique</option>
-                    <option value="Mauritania">Mauritania</option>
-                    <option value="Mauritius">Mauritius</option>
-                    <option value="Mayotte">Mayotte</option>
-                    <option value="Mexico">Mexico</option>
-                    <option value="Micronesia, Federated States of">Micronesia, Federated States of</option>
-                    <option value="Moldova, Republic of">Moldova, Republic of</option>
-                    <option value="Monaco">Monaco</option>
-                    <option value="Mongolia">Mongolia</option>
-                    <option value="Montenegro">Montenegro</option>
-                    <option value="Montserrat">Montserrat</option>
-                    <option value="Morocco">Morocco</option>
-                    <option value="Mozambique">Mozambique</option>
-                    <option value="Myanmar">Myanmar</option>
-                    <option value="Namibia">Namibia</option>
-                    <option value="Nauru">Nauru</option>
-                    <option value="Nepal">Nepal</option>
-                    <option value="Netherlands">Netherlands</option>
-                    <option value="Netherlands Antilles">Netherlands Antilles</option>
-                    <option value="New Caledonia">New Caledonia</option>
-                    <option value="New Zealand">New Zealand</option>
-                    <option value="Nicaragua">Nicaragua</option>
-                    <option value="Niger">Niger</option>
-                    <option value="Nigeria">Nigeria</option>
-                    <option value="Niue">Niue</option>
-                    <option value="Norfolk Island">Norfolk Island</option>
-                    <option value="Northern Mariana Islands">Northern Mariana Islands</option>
-                    <option value="Norway">Norway</option>
-                    <option value="Oman">Oman</option>
-                    <option value="Pakistan">Pakistan</option>
-                    <option value="Palau">Palau</option>
-                    <option value="Palestinian Territory, Occupied">Palestinian Territory, Occupied</option>
-                    <option value="Panama">Panama</option>
-                    <option value="Papua New Guinea">Papua New Guinea</option>
-                    <option value="Paraguay">Paraguay</option>
-                    <option value="Peru">Peru</option>
-                    <option value="Philippines">Philippines</option>
-                    <option value="Pitcairn">Pitcairn</option>
-                    <option value="Poland">Poland</option>
-                    <option value="Portugal">Portugal</option>
-                    <option value="Puerto Rico">Puerto Rico</option>
-                    <option value="Qatar">Qatar</option>
-                    <option value="Reunion">Reunion</option>
-                    <option value="Romania">Romania</option>
-                    <option value="Russian Federation">Russian Federation</option>
-                    <option value="Rwanda">Rwanda</option>
-                    <option value="Saint Helena">Saint Helena</option>
-                    <option value="Saint Kitts and Nevis">Saint Kitts and Nevis</option>
-                    <option value="Saint Lucia">Saint Lucia</option>
-                    <option value="Saint Pierre and Miquelon">Saint Pierre and Miquelon</option>
-                    <option value="Saint Vincent and The Grenadines">Saint Vincent and The Grenadines</option>
-                    <option value="Samoa">Samoa</option>
-                    <option value="San Marino">San Marino</option>
-                    <option value="Sao Tome and Principe">Sao Tome and Principe</option>
-                    <option value="Saudi Arabia">Saudi Arabia</option>
-                    <option value="Senegal">Senegal</option>
-                    <option value="Serbia">Serbia</option>
-                    <option value="Seychelles">Seychelles</option>
-                    <option value="Sierra Leone">Sierra Leone</option>
-                    <option value="Singapore">Singapore</option>
-                    <option value="Slovakia">Slovakia</option>
-                    <option value="Slovenia">Slovenia</option>
-                    <option value="Solomon Islands">Solomon Islands</option>
-                    <option value="Somalia">Somalia</option>
-                    <option value="South Africa">South Africa</option>
-                    <option value="South Georgia and The South Sandwich Islands">South Georgia and The South Sandwich Islands</option>
-                    <option value="Spain">Spain</option>
-                    <option value="Sri Lanka">Sri Lanka</option>
-                    <option value="Sudan">Sudan</option>
-                    <option value="Suriname">Suriname</option>
-                    <option value="Svalbard and Jan Mayen">Svalbard and Jan Mayen</option>
-                    <option value="Swaziland">Swaziland</option>
-                    <option value="Sweden">Sweden</option>
-                    <option value="Switzerland">Switzerland</option>
-                    <option value="Syrian Arab Republic">Syrian Arab Republic</option>
-                    <option value="Taiwan">Taiwan</option>
-                    <option value="Tajikistan">Tajikistan</option>
-                    <option value="Tanzania, United Republic of">Tanzania, United Republic of</option>
-                    <option value="Thailand">Thailand</option>
-                    <option value="Timor-leste">Timor-leste</option>
-                    <option value="Togo">Togo</option>
-                    <option value="Tokelau">Tokelau</option>
-                    <option value="Tonga">Tonga</option>
-                    <option value="Trinidad and Tobago">Trinidad and Tobago</option>
-                    <option value="Tunisia">Tunisia</option>
-                    <option value="Turkey">Turkey</option>
-                    <option value="Turkmenistan">Turkmenistan</option>
-                    <option value="Turks and Caicos Islands">Turks and Caicos Islands</option>
-                    <option value="Tuvalu">Tuvalu</option>
-                    <option value="Uganda">Uganda</option>
-                    <option value="Ukraine">Ukraine</option>
-                    <option value="United Arab Emirates">United Arab Emirates</option>
-                    <option value="United Kingdom">United Kingdom</option>
-                    <option value="United States">United States</option>
-                    <option value="United States Minor Outlying Islands">United States Minor Outlying Islands</option>
-                    <option value="Uruguay">Uruguay</option>
-                    <option value="Uzbekistan">Uzbekistan</option>
-                    <option value="Vanuatu">Vanuatu</option>
-                    <option value="Venezuela">Venezuela</option>
-                    <option value="Viet Nam">Viet Nam</option>
-                    <option value="Virgin Islands, British">Virgin Islands, British</option>
-                    <option value="Virgin Islands, U.S.">Virgin Islands, U.S.</option>
-                    <option value="Wallis and Futuna">Wallis and Futuna</option>
-                    <option value="Western Sahara">Western Sahara</option>
-                    <option value="Yemen">Yemen</option>
-                    <option value="Zambia">Zambia</option>
-                    <option value="Zimbabwe">Zimbabwe</option>
-                </select>
-              </div>
-              <div class="relative mb-4">
-                
-                <input type="radio" id="risk" name="risk"  class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out" Value="I understand the Risk involved with trading" required><span>I understand the Risk involved with Trading</span>
-              </div>
-              
-            <button type="submit" class="text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">SIGN UP</button>
-            <p class="text-xl text-gray-500 mt-3">Registered already? <a href="./login.php">Login</a> </p>
+            </form>
           </div>
-</form>
-      </section>
+        </div>
+      </div>
+    </section>
+    <!-- #registration area-->
+  </main>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+<script src="../public/Js/main.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+<script>
+        particlesJS.load('particles-js', '../public/particle/particles.json');
+    </script>
 </body>
 </html>
