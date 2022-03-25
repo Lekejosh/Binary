@@ -56,7 +56,7 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
             </div>
             <div class="form-row my-4">
               <div class="col">
-                <input type="date" required name="date" class="form-control" id="dob" placeholder="Confirm Password">
+                <input type="date" required name="dob" class="form-control" id="dob" placeholder="Confirm Password">
                 
               </div>
             </div>
