@@ -1,11 +1,7 @@
 <?php 
 session_start();
 
-	include("connection.php");
-	include("functions.php");
-
-	$user_data = check_login($con);
-
+	include("mysql_connect.php");
 ?>
 
 <!DOCTYPE html>
@@ -78,7 +74,7 @@ session_start();
                 <div class="profile_details">
                     <div class="name_job">
                         <div class="name"style="color: #fff">
-                            <?php echo $user_data['user_name'];?>
+                            <?php echo $user_data['firstName'];?>
                         </div>
                         <div class="email"></div>
                         <?php echo $user_data['email'];?>
