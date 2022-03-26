@@ -40,21 +40,41 @@ $phone = validate_input_text($_POST['phone']);
 if(empty($phone)){
     $error[]="You Forgot to enter your phone";
 }
+
+//Generate Vkey
+$vkey = md5(time().$lastName);
+
+
 if(empty($error)){
+    // $to = $email;
+    // $subject = "Email verification";
+    // $message = "<a href='http://localhost/binary/verify.php?vkey=$vkey'>Register Account</a>";
+    // $headers= "From: info@Benchgrowthinvest.com \r\n";
+    //  $headers.="MIME-version: 1.0"."\r\n";
+    //  $headers .= "Content-Type:text/html; charset=utf-8"."\r\n";
+    
+    //  mail($to,$subject,$headers);
+
+    
     //register new user_name
     $hashed_pass = password_hash($password,algo:PASSWORD_DEFAULT);
     require('mysql_connect.php');
 
-    $query = "INSERT INTO user(userID, firstName, lastName, email, password,dob,country,phone,registerDate)";
-    $query .= "VALUES('',?,?,?,?,?,?,?,NOW())";
+    $query = "INSERT INTO user(userID, firstName, lastName, email, password,dob,country,phone,vkey,registerDate)";
+    $query .= "VALUES('',?,?,?,?,?,?,?,?,NOW())";
 
     $q = mysqli_stmt_init($con);
 
     mysqli_stmt_prepare($q,$query);
 
-    mysqli_stmt_bind_param($q,'sssssss',$firstName, $lastName,$email,$hashed_pass,$dob,$country,$phone);
+    mysqli_stmt_bind_param($q,'ssssssss',$firstName, $lastName,$email,$hashed_pass,$dob,$country,$phone,$vkey);
 
     mysqli_stmt_execute($q);
+
+    session_start();
+
+    //Create session variable
+    $_SESSION['userID'] = mysqli_insert_id($con);
 
     if(mysqli_stmt_affected_rows($q)==1){
         header("Location: login1.php");

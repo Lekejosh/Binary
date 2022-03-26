@@ -19,3 +19,20 @@ function validate_input_email($emailValue){
     }
     return'';
 }
+
+
+function get_user_info($con, $userID){
+   $query = "SELECT userID, firstName,lastName,email,password,dob,country,phone,vkey FROM user WHERE userID=?";
+    $q = mysqli_stmt_init($con);
+
+    mysqli_stmt_prepare($q, $query);
+
+    mysqli_stmt_bind_param($q, 'i', $userID);
+
+    mysqli_stmt_execute($q);
+    $result = mysqli_stmt_get_result($q);
+
+    $row = mysqli_fetch_array($result);
+    return empty($row)?false:$row;
+
+}

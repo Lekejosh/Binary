@@ -1,11 +1,14 @@
 <?php 
 session_start();
 
-	include("connection.php");
-	include("functions.php");
+include('helper.php');
 
-	$user_data = check_login($con);
+$user = array();
 
+if(isset($_SESSION['userID'])){
+  require('mysql_connect.php');
+  $user = get_user_info($con,$_SESSION['userID']);
+}
 ?>
 
 
@@ -80,7 +83,7 @@ session_start();
   <div class="container mx-auto flex px-5 py-24 items-center justify-center flex-col">
     
     <div class="text-center lg:w-2/3 w-full">
-      <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900 dark:text-gray-200">Welcome <?php echo $user_data['user_name'];?></h1>
+      <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900 dark:text-gray-200">Welcome <?php echo $user['firstName'];?></h1>
       <p class="mb-8 leading-relaxed">AVAILABLE BALANCE : 0.0000000BTC</p>
       <div class="flex justify-center">
           <a href="./deposit.php">
