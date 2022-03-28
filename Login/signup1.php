@@ -321,10 +321,13 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
               <input type="checkbox" class="form-check-input" name="agreement" required>
               <label for="agreement" class="form-check-label font-ubuntu text-white-50">I agree<a href="#"> terms, conditons and policy</a>(*)</label>
             </div>
+            
    <div class="submit-btn text-center my-5">
-    <button class="w-100 btn btn-warning rounded-pill btn-lg btn-primary" type="submit">Sign in</button>
+    <button class="w-100 btn btn-warning rounded-pill btn-lg btn-primary" type="submit">Sign Up</button>
    </div>
-   
+   <div class="form-check form-check-inline">
+            <span class="form-check-label font-ubuntu text-white-50">already have an account?<a href="login1.php"> Login</a></span>
+            </div>
     <p class="mt-5 mb-3 text-muted">&copy; 2022</p>
   </form>
     
